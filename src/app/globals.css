@@ -1,0 +1,2713 @@
+@import url('https://fonts.cdnfonts.com/css/lcd');
+@import "tailwindcss";
+
+/* =========================================================
+   NEXA UTILITY
+   PREMIUM GLASS DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+  color-scheme: dark;
+
+  --nexa-bg: #050505;
+  --nexa-bg-secondary: #090909;
+
+  --nexa-surface: rgba(255, 255, 255, 0.055);
+  --nexa-surface-strong: rgba(255, 255, 255, 0.085);
+  --nexa-surface-soft: rgba(255, 255, 255, 0.035);
+
+  --nexa-border: rgba(255, 255, 255, 0.11);
+  --nexa-border-strong: rgba(255, 255, 255, 0.18);
+
+  --nexa-text: #f8fafc;
+  --nexa-muted: #94a3b8;
+  --nexa-subtle: #64748b;
+  --nexa-text-muted: var(--nexa-muted);
+  --nexa-surface-hover: rgba(255, 255, 255, 0.09);
+
+  --nexa-accent: #60a5fa;
+  --nexa-accent-strong: #3b82f6;
+  --nexa-accent-soft: rgba(96, 165, 250, 0.13);
+
+  --nexa-glow-1: rgba(59, 130, 246, 0.13);
+  --nexa-glow-2: rgba(139, 92, 246, 0.08);
+
+  --nexa-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.32);
+
+  --nexa-glass-blur: 24px;
+
+  --nexa-home-bg: #03060a;
+  --nexa-home-header: rgba(5, 8, 13, 0.88);
+  --nexa-home-text: #f8fafc;
+  --nexa-home-muted: #cbd5e1;
+  --nexa-home-accent: #ff781f;
+  --nexa-home-accent-bright: #ffb36b;
+  --nexa-home-accent-rgb: 255 120 31;
+  --nexa-home-command-bg: rgba(16, 21, 29, 0.84);
+  --nexa-home-date-bg: rgba(9, 12, 17, 0.88);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--nexa-bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  color: var(--nexa-text);
+
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      var(--nexa-glow-1),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 15%,
+      var(--nexa-glow-2),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      var(--nexa-bg),
+      var(--nexa-bg-secondary)
+    );
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  transition:
+    background 300ms ease,
+    color 300ms ease;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+::selection {
+  background: var(--nexa-accent-soft);
+  color: var(--nexa-text);
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--nexa-border);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nexa-border-strong);
+}
+
+/* =========================================================
+   BLACK
+   ========================================================= */
+
+html[data-nexa-theme="black"] {
+  color-scheme: dark;
+
+  --nexa-bg: #030303;
+  --nexa-bg-secondary: #080808;
+
+  --nexa-surface: rgba(255, 255, 255, 0.055);
+  --nexa-surface-strong: rgba(255, 255, 255, 0.09);
+  --nexa-surface-soft: rgba(255, 255, 255, 0.032);
+
+  --nexa-border: rgba(255, 255, 255, 0.105);
+  --nexa-border-strong: rgba(255, 255, 255, 0.18);
+
+  --nexa-text: #fafafa;
+  --nexa-muted: #a1a1aa;
+  --nexa-subtle: #71717a;
+  --nexa-surface-hover: rgba(255, 255, 255, 0.1);
+
+  --nexa-accent: #d4d4d8;
+  --nexa-accent-strong: #f4f4f5;
+  --nexa-accent-soft: rgba(255, 255, 255, 0.09);
+
+  --nexa-glow-1: rgba(255, 255, 255, 0.045);
+  --nexa-glow-2: rgba(148, 163, 184, 0.035);
+
+  --nexa-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.5);
+
+  --nexa-home-bg: #03060a;
+  --nexa-home-header: rgba(5, 8, 13, 0.88);
+  --nexa-home-text: #f8fafc;
+  --nexa-home-muted: #cbd5e1;
+  --nexa-home-accent: #ff781f;
+  --nexa-home-accent-bright: #ffb36b;
+  --nexa-home-accent-rgb: 255 120 31;
+  --nexa-home-command-bg: rgba(16, 21, 29, 0.84);
+  --nexa-home-date-bg: rgba(9, 12, 17, 0.88);
+}
+
+/* =========================================================
+   WHITE
+   ========================================================= */
+
+html[data-nexa-theme="white"] {
+  color-scheme: light;
+
+  --nexa-bg: #eef2f7;
+  --nexa-bg-secondary: #f8fafc;
+
+  --nexa-surface: rgba(255, 255, 255, 0.64);
+  --nexa-surface-strong: rgba(255, 255, 255, 0.82);
+  --nexa-surface-soft: rgba(255, 255, 255, 0.48);
+
+  --nexa-border: rgba(15, 23, 42, 0.09);
+  --nexa-border-strong: rgba(15, 23, 42, 0.15);
+
+  --nexa-text: #111827;
+  --nexa-muted: #64748b;
+  --nexa-subtle: #94a3b8;
+  --nexa-surface-hover: rgba(15, 23, 42, 0.06);
+
+  --nexa-accent: #2563eb;
+  --nexa-accent-strong: #1d4ed8;
+  --nexa-accent-soft: rgba(37, 99, 235, 0.09);
+
+  --nexa-glow-1: rgba(59, 130, 246, 0.11);
+  --nexa-glow-2: rgba(139, 92, 246, 0.07);
+
+  --nexa-shadow:
+    0 24px 70px rgba(15, 23, 42, 0.09);
+
+  --nexa-home-bg: #eef3fa;
+  --nexa-home-header: rgba(248, 250, 252, 0.9);
+  --nexa-home-text: #111827;
+  --nexa-home-muted: #475569;
+  --nexa-home-accent: #2563eb;
+  --nexa-home-accent-bright: #60a5fa;
+  --nexa-home-accent-rgb: 37 99 235;
+  --nexa-home-command-bg: rgba(255, 255, 255, 0.82);
+  --nexa-home-date-bg: rgba(255, 255, 255, 0.84);
+}
+
+/* =========================================================
+   MIDNIGHT
+   ========================================================= */
+
+html[data-nexa-theme="midnight"] {
+  color-scheme: dark;
+
+  --nexa-bg: #050914;
+  --nexa-bg-secondary: #0a1020;
+
+  --nexa-surface: rgba(96, 165, 250, 0.055);
+  --nexa-surface-strong: rgba(96, 165, 250, 0.09);
+  --nexa-surface-soft: rgba(96, 165, 250, 0.035);
+
+  --nexa-border: rgba(96, 165, 250, 0.13);
+  --nexa-border-strong: rgba(96, 165, 250, 0.22);
+
+  --nexa-text: #f8fafc;
+  --nexa-muted: #94a3b8;
+  --nexa-subtle: #64748b;
+  --nexa-surface-hover: rgba(96, 165, 250, 0.1);
+
+  --nexa-accent: #60a5fa;
+  --nexa-accent-strong: #3b82f6;
+  --nexa-accent-soft: rgba(59, 130, 246, 0.14);
+
+  --nexa-glow-1: rgba(59, 130, 246, 0.15);
+  --nexa-glow-2: rgba(129, 140, 248, 0.08);
+
+  --nexa-home-bg: #050914;
+  --nexa-home-header: rgba(5, 9, 20, 0.9);
+  --nexa-home-text: #f8fafc;
+  --nexa-home-muted: #cbd5e1;
+  --nexa-home-accent: #60a5fa;
+  --nexa-home-accent-bright: #bfdbfe;
+  --nexa-home-accent-rgb: 96 165 250;
+  --nexa-home-command-bg: rgba(10, 16, 32, 0.86);
+  --nexa-home-date-bg: rgba(8, 13, 24, 0.9);
+}
+
+/* =========================================================
+   OCEAN
+   ========================================================= */
+
+html[data-nexa-theme="ocean"] {
+  color-scheme: dark;
+
+  --nexa-bg: #031014;
+  --nexa-bg-secondary: #071b22;
+
+  --nexa-surface: rgba(34, 211, 238, 0.055);
+  --nexa-surface-strong: rgba(34, 211, 238, 0.085);
+  --nexa-surface-soft: rgba(34, 211, 238, 0.032);
+
+  --nexa-border: rgba(34, 211, 238, 0.13);
+  --nexa-border-strong: rgba(34, 211, 238, 0.22);
+
+  --nexa-text: #ecfeff;
+  --nexa-muted: #94a3b8;
+  --nexa-subtle: #64748b;
+  --nexa-surface-hover: rgba(34, 211, 238, 0.1);
+
+  --nexa-accent: #22d3ee;
+  --nexa-accent-strong: #06b6d4;
+  --nexa-accent-soft: rgba(6, 182, 212, 0.14);
+
+  --nexa-glow-1: rgba(6, 182, 212, 0.15);
+  --nexa-glow-2: rgba(59, 130, 246, 0.08);
+
+  --nexa-home-bg: #031014;
+  --nexa-home-header: rgba(3, 16, 20, 0.9);
+  --nexa-home-text: #ecfeff;
+  --nexa-home-muted: #b6d2d8;
+  --nexa-home-accent: #22d3ee;
+  --nexa-home-accent-bright: #a5f3fc;
+  --nexa-home-accent-rgb: 34 211 238;
+  --nexa-home-command-bg: rgba(7, 27, 34, 0.88);
+  --nexa-home-date-bg: rgba(3, 16, 20, 0.92);
+}
+
+/* =========================================================
+   FOREST
+   ========================================================= */
+
+html[data-nexa-theme="forest"] {
+  color-scheme: dark;
+
+  --nexa-bg: #031009;
+  --nexa-bg-secondary: #071b10;
+
+  --nexa-surface: rgba(52, 211, 153, 0.055);
+  --nexa-surface-strong: rgba(52, 211, 153, 0.085);
+  --nexa-surface-soft: rgba(52, 211, 153, 0.032);
+
+  --nexa-border: rgba(52, 211, 153, 0.13);
+  --nexa-border-strong: rgba(52, 211, 153, 0.22);
+
+  --nexa-text: #ecfdf5;
+  --nexa-muted: #94a3b8;
+  --nexa-subtle: #64748b;
+  --nexa-surface-hover: rgba(52, 211, 153, 0.1);
+
+  --nexa-accent: #34d399;
+  --nexa-accent-strong: #10b981;
+  --nexa-accent-soft: rgba(16, 185, 129, 0.14);
+
+  --nexa-glow-1: rgba(16, 185, 129, 0.14);
+  --nexa-glow-2: rgba(52, 211, 153, 0.07);
+
+  --nexa-home-bg: #031009;
+  --nexa-home-header: rgba(3, 16, 9, 0.9);
+  --nexa-home-text: #ecfdf5;
+  --nexa-home-muted: #c3ddd0;
+  --nexa-home-accent: #34d399;
+  --nexa-home-accent-bright: #a7f3d0;
+  --nexa-home-accent-rgb: 52 211 153;
+  --nexa-home-command-bg: rgba(7, 27, 16, 0.88);
+  --nexa-home-date-bg: rgba(3, 16, 9, 0.92);
+}
+
+/* =========================================================
+   PREMIUM GLASS
+   ========================================================= */
+
+.nexa-theme-surface,
+.nexa-glass {
+  background:
+    linear-gradient(
+      135deg,
+      var(--nexa-surface-strong),
+      var(--nexa-surface)
+    );
+
+  border: 1px solid var(--nexa-border);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    var(--nexa-shadow);
+
+  backdrop-filter:
+    blur(var(--nexa-glass-blur))
+    saturate(135%);
+
+  -webkit-backdrop-filter:
+    blur(var(--nexa-glass-blur))
+    saturate(135%);
+
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.nexa-theme-surface:hover,
+.nexa-glass:hover {
+  border-color: var(--nexa-border-strong);
+}
+
+.nexa-theme-surface-2 {
+  background:
+    linear-gradient(
+      135deg,
+      var(--nexa-surface-strong),
+      var(--nexa-surface-soft)
+    );
+
+  border-color: var(--nexa-border);
+}
+
+.nexa-theme-accent {
+  color: var(--nexa-accent);
+}
+
+.nexa-theme-accent-bg {
+  background:
+    linear-gradient(
+      135deg,
+      var(--nexa-accent),
+      var(--nexa-accent-strong)
+    );
+}
+
+.nexa-theme-accent-soft {
+  background:
+    linear-gradient(
+      135deg,
+      var(--nexa-accent-soft),
+      transparent
+    );
+
+  border: 1px solid var(--nexa-border);
+}
+
+.nexa-theme-border {
+  border-color: var(--nexa-border);
+}
+
+.nexa-nav-active {
+  color: var(--nexa-accent-strong);
+  background: color-mix(in srgb, var(--nexa-accent) 15%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--nexa-accent) 28%, transparent);
+  font-weight: 600;
+}
+
+.nexa-nav-active:hover {
+  background: color-mix(in srgb, var(--nexa-accent) 21%, transparent);
+}
+
+.nexa-nav-active-icon {
+  color: var(--nexa-accent-strong);
+}
+
+.nexa-workspace-bar {
+  border: 1px solid var(--nexa-border);
+  background: color-mix(in srgb, var(--nexa-bg-secondary) 90%, transparent);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+}
+
+.nexa-workspace-tab {
+  color: var(--nexa-muted);
+  background: var(--nexa-surface-soft);
+  transition: background 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.nexa-workspace-tab:hover {
+  color: var(--nexa-text);
+  background: var(--nexa-surface-hover);
+}
+
+.nexa-workspace-tab-active {
+  color: var(--nexa-accent-strong);
+  background: color-mix(in srgb, var(--nexa-accent) 15%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--nexa-accent) 28%, transparent);
+}
+
+.nexa-workspace-tab-opening {
+  transform-origin: center bottom;
+  animation: nexa-workspace-tab-open 380ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.nexa-workspace-tab-closing {
+  pointer-events: none;
+  transform-origin: center bottom;
+  animation: nexa-workspace-tab-close 210ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+.nexa-page-opening {
+  animation: nexa-page-open 280ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+html.nexa-page-closing main {
+  transform-origin: center center;
+  animation: nexa-page-close 210ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+@keyframes nexa-workspace-tab-open {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.84);
+  }
+  68% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.025);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes nexa-workspace-tab-close {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(7px) scale(0.82);
+  }
+}
+
+@keyframes nexa-page-open {
+  0% {
+    opacity: 0;
+    transform: translateY(5px) scale(0.995);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes nexa-page-close {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(6px) scale(0.97);
+  }
+}
+
+/* =========================================================
+   PREMIUM GLASS BUTTON
+   ========================================================= */
+
+.nexa-glass-button {
+  background:
+    linear-gradient(
+      135deg,
+      var(--nexa-surface-strong),
+      var(--nexa-surface)
+    );
+
+  border: 1px solid var(--nexa-border);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 10px 30px rgba(0, 0, 0, 0.12);
+
+  backdrop-filter:
+    blur(18px)
+    saturate(140%);
+
+  -webkit-backdrop-filter:
+    blur(18px)
+    saturate(140%);
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.nexa-glass-button:hover {
+  transform: translateY(-1px);
+  border-color: var(--nexa-border-strong);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 14px 35px rgba(0, 0, 0, 0.16);
+}
+
+.nexa-glass-button:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   LIGHT THEME COMPATIBILITY
+   ========================================================= */
+
+html[data-nexa-theme="white"] .text-white {
+  color: #111827 !important;
+}
+
+html[data-nexa-theme="white"] .text-zinc-100 {
+  color: #1f2937 !important;
+}
+
+html[data-nexa-theme="white"] .text-zinc-200 {
+  color: #334155 !important;
+}
+
+html[data-nexa-theme="white"] .text-zinc-300 {
+  color: #475569 !important;
+}
+
+html[data-nexa-theme="white"] .text-zinc-400,
+html[data-nexa-theme="white"] .text-zinc-500 {
+  color: #64748b !important;
+}
+
+html[data-nexa-theme="white"] .text-zinc-600 {
+  color: #475569 !important;
+}
+
+html[data-nexa-theme="white"] .bg-zinc-950 {
+  background-color: transparent !important;
+}
+
+html[data-nexa-theme="white"] .bg-zinc-900 {
+  background-color: rgba(255, 255, 255, 0.55) !important;
+}
+
+html[data-nexa-theme="white"] .bg-zinc-800 {
+  background-color: rgba(226, 232, 240, 0.6) !important;
+}
+
+html[data-nexa-theme="white"] .bg-zinc-700 {
+  background-color: #cbd5e1 !important;
+}
+
+html[data-nexa-theme="white"] .border-white\/10 {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html[data-nexa-theme="white"] .border-white\/20 {
+  border-color: rgba(15, 23, 42, 0.16) !important;
+}
+
+html[data-nexa-theme="white"] .border-white\/30 {
+  border-color: rgba(15, 23, 42, 0.24) !important;
+}
+
+html[data-nexa-theme="white"] .bg-black\/20 {
+  background-color: rgba(15, 23, 42, 0.055) !important;
+}
+
+html[data-nexa-theme="white"] .bg-black\/30 {
+  background-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+html[data-nexa-theme="white"] ::selection {
+  background: rgba(37, 99, 235, 0.16);
+  color: #111827;
+}
+
+html[data-nexa-theme="white"] ::-webkit-scrollbar-thumb {
+  background: rgba(15, 23, 42, 0.14);
+}
+
+html[data-nexa-theme="white"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(15, 23, 42, 0.22);
+}
+
+/* =========================================================
+   GLASS INPUTS
+   ========================================================= */
+
+input,
+textarea,
+select {
+  border-color: var(--nexa-border);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--nexa-accent);
+  box-shadow:
+    0 0 0 3px var(--nexa-accent-soft);
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   Nexa Utility — Animated Dashboard Hero
+   ========================================================= */
+
+.nexa-hero {
+  isolation: isolate;
+  transform: translateZ(0);
+}
+
+.nexa-hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    rgba(0, 0, 0, 0.8) 45%,
+    transparent 100%
+  );
+  animation: nexa-grid-drift 18s linear infinite;
+}
+
+.nexa-orb {
+  filter: blur(70px);
+  opacity: 0.16;
+  will-change: transform;
+}
+
+.nexa-orb-one {
+  background: radial-gradient(
+    circle,
+    var(--nexa-accent),
+    transparent 68%
+  );
+  animation: nexa-orb-one 12s ease-in-out infinite;
+}
+
+.nexa-orb-two {
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.9),
+    transparent 68%
+  );
+  animation: nexa-orb-two 15s ease-in-out infinite;
+}
+
+.nexa-orb-three {
+  background: radial-gradient(
+    circle,
+    rgba(16, 185, 129, 0.7),
+    transparent 68%
+  );
+  animation: nexa-orb-three 18s ease-in-out infinite;
+}
+
+.nexa-hero-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--nexa-accent),
+    rgba(255, 255, 255, 0.5),
+    var(--nexa-accent),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: nexa-line-flow 6s linear infinite;
+  opacity: 0.55;
+}
+
+.nexa-name-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--nexa-text) 0%,
+    var(--nexa-accent) 45%,
+    var(--nexa-text) 90%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: nexa-name-shimmer 6s ease-in-out infinite;
+}
+
+.nexa-wave {
+  transform-origin: 70% 70%;
+  animation: nexa-wave 2.8s ease-in-out infinite;
+}
+
+.nexa-hero-enter {
+  animation: nexa-hero-enter 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.nexa-delay-1 {
+  animation-delay: 100ms;
+}
+
+.nexa-delay-2 {
+  animation-delay: 180ms;
+}
+
+.nexa-delay-3 {
+  animation-delay: 260ms;
+}
+
+.nexa-delay-4 {
+  animation-delay: 340ms;
+}
+
+.nexa-command-box {
+  isolation: isolate;
+}
+
+.nexa-command-shine {
+  animation: nexa-command-shine 4.5s ease-in-out infinite;
+}
+
+.nexa-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border: 1px solid var(--nexa-border);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.7rem;
+  color: var(--nexa-text-muted);
+  backdrop-filter: blur(14px);
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background-color 220ms ease,
+    color 220ms ease;
+}
+
+.nexa-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--nexa-accent);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--nexa-text);
+}
+
+.nexa-pill-link {
+  text-decoration: none;
+}
+
+.nexa-ring {
+  animation: nexa-ring-spin 18s linear infinite;
+}
+
+.nexa-ring-reverse {
+  animation: nexa-ring-spin-reverse 12s linear infinite;
+}
+
+.nexa-center-card {
+  animation: nexa-center-pulse 4s ease-in-out infinite;
+}
+
+.nexa-float-card {
+  animation: nexa-float 4.5s ease-in-out infinite;
+}
+
+.nexa-float-one {
+  animation-delay: -1s;
+}
+
+.nexa-float-two {
+  animation-delay: -2.2s;
+}
+
+/* =========================================================
+   Keyframes
+   ========================================================= */
+
+@keyframes nexa-grid-drift {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 42px 42px;
+  }
+}
+
+@keyframes nexa-orb-one {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(70px, 40px, 0) scale(1.12);
+  }
+}
+
+@keyframes nexa-orb-two {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-55px, 45px, 0) scale(1.1);
+  }
+}
+
+@keyframes nexa-orb-three {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(35px, -40px, 0) scale(1.15);
+  }
+}
+
+@keyframes nexa-line-flow {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes nexa-name-shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes nexa-wave {
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  10%,
+  30% {
+    transform: rotate(14deg);
+  }
+
+  20%,
+  40% {
+    transform: rotate(-8deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes nexa-hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes nexa-command-shine {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  45%,
+  100% {
+    transform: translateX(420%);
+  }
+}
+
+@keyframes nexa-ring-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes nexa-ring-spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes nexa-center-pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.035);
+  }
+}
+
+@keyframes nexa-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .nexa-hero-grid,
+  .nexa-orb,
+  .nexa-hero-line,
+  .nexa-name-gradient,
+  .nexa-wave,
+  .nexa-hero-enter,
+  .nexa-command-shine,
+  .nexa-ring,
+  .nexa-ring-reverse,
+  .nexa-center-card,
+  .nexa-float-card {
+    animation: none !important;
+  }
+
+  .nexa-hero-enter {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ============================================================
+   NEXA HERO - LARGE TUBE CLOCK
+   ============================================================ */
+
+.nexa-tube-clock-frame {
+  contain: layout paint;
+}
+
+@media (max-width: 1279px) and (min-width: 1024px) {
+  .nexa-hero .nexa-tube-clock-frame {
+    transform: scale(0.82);
+    transform-origin: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nexa-tube-clock-frame {
+    animation: none !important;
+  }
+}
+
+/* === NEXA TUBE CLOCK START === */
+.nexa-tube-clock-root *{
+    box-sizing: border-box;
+}.nexa-tube-clock-root{
+    height: 100%;
+    overflow: hidden;
+}.nexa-tube-clock-root{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background: linear-gradient(#040909 60vh, #312c2a 80vh);
+    font-family: 'LCD', sans-serif;
+    font-family: 'LCD2', sans-serif;
+    font-family: 'LCDMono2', sans-serif;
+    font-family: 'LCDMono', sans-serif;
+    font-family: 'Digitalism', sans-serif;
+
+    --_refl:#f3eeef;
+
+    --_bloom:#fcfbf9;
+    --_y1:#fae8a5;
+    --_y2:#fbd608;
+
+    --_o1:#ff8f0c;
+    --_o2:#e74702;
+    --_o3:#b32801;
+
+    --mw1:#d0d5d7;
+    
+    --m1:#fdea09;
+    --m2:#e46703;
+    --m3:#ac2a04;
+}.nexa-tube-clock-root #noise-svg{
+    height: 100%;
+    width: 100%;
+    opacity: 0.12;
+    position: absolute;
+    z-index: 100;
+    pointer-events: none;
+}.nexa-tube-clock-root #noise-rect{
+    width: 100vw;
+    height: 100vh;
+}.nexa-tube-clock-root .clock{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(var(--_size) * 0.01); /* em hack for shade scaling */
+
+    --_factor: min(600px, 80vh);
+    --_size: min(var(--_factor), 80vw);
+}.nexa-tube-clock-root .shadow{
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 100%;
+    height: 0em;
+    translate: 0 45em;
+    box-shadow: 
+    0 0 3em 2em #040909,
+    0 0 8em 3em var(--_o3),
+    0 0 10em 4em var(--_o2),
+    0 0 10em 5em var(--_o1);
+    opacity: 0.6;
+}.nexa-tube-clock-root .shadow::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 20em;
+    width: 0;
+    box-shadow: 
+    0 0 8em 4em var(--_y1),
+    0 0 8em 6em var(--_y2),
+    0 0 8em 8em var(--_o1),
+    0 0 8em 10em var(--_o2),
+    0 0 8em 12em var(--_o3);
+}.nexa-tube-clock-root .shadow::after{
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.5;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 50%;
+    height: 10em;
+    width: 10em;
+    border: 2px solid red;
+    transform: rotateX(70deg);
+    box-shadow: 
+    0 0em 12em 40em var(--_o1),
+    0 0em 12em 60em var(--_o2),
+    0 0em 12em 80em var(--_o3);
+}.nexa-tube-clock-root .clock.off .shadow{
+    box-shadow: 
+    0 0 4em 3em #040909,
+    0 0 8em 3em var(--_o3),
+    0 0 10em 4em var(--_o2),
+    0 0 10em 5em var(--_o1);
+    opacity: 0;
+}.nexa-tube-clock-root .outer-pipe{
+    position: absolute;
+    z-index: 2;
+    width: calc(var(--_size) * (8/15));
+    height: var(--_size);
+    border-radius: 20% / 10%;
+    overflow: hidden;
+    opacity: 1;
+    --_clip-btm: 85.8%;
+    clip-path: polygon(0 0, 100% 0, 100% var(--_clip-btm), 0 var(--_clip-btm));
+}.nexa-tube-clock-root .inner-pipe{
+    width: 100%;
+    height: 100%;
+    scale: 0.84 0.91;
+    border-radius: 15% / 7%;
+    box-shadow: 
+    0em 104em 16em 20em #040909,
+    /* light on */
+    0em 1.2em 1em 0.2em var(--m3),
+    0em 1.2em 1em 0.5em var(--m2),
+    0em 1.2em 0.5em 1.2em var(--m1),
+    0em 1.2em 1.2em 1.5em var(--m2),
+    0em 1.2em 2em 2em var(--m3),
+    /* ---- */
+    0em 90em 16em 20em #040909,
+    /* nat light */
+    -1em 1em 2em 3.7em #040909,
+    0.5em 0em 2em 3.7em #040909,
+    0em 0em 0em 4.6em var(--mw1),
+    0em 0em 0.5em 5em var(--mw1),
+    /* --------- */
+    0em 0em 0em 20em #040909;
+}.nexa-tube-clock-root .pipe-accents{  
+    width: calc(var(--_size) * (8/15));
+    height: var(--_size);
+    position: absolute;
+}.nexa-tube-clock-root .pipe-accents .top-tube,
+.nexa-tube-clock-root .pipe-accents .top,
+.nexa-tube-clock-root .pipe-accents .topinset,
+.nexa-tube-clock-root .pipe-accents .left,
+.nexa-tube-clock-root .pipe-accents .right{  
+    z-index: 3;
+}.nexa-tube-clock-root .pipe-accents .top-tube{
+    position: absolute;
+    top: 3%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 16%;
+    height: 6%;
+    background: #040909;
+    background: linear-gradient(120deg, rgba(60,62,62,1) 0%, rgba(4,9,0,1) 60%);
+    box-shadow: 
+    inset -0.2em 1.1em 1.4em -0.4em var(--mw1),
+    /* light on */
+    inset 0em -1.2em 0.5em -1.1em var(--m1),
+    inset 0em -1.2em 1em -0.8em var(--m2),
+    inset 0em -1.2em 1em -0.2em var(--m3)
+    /* -------- */
+    ;
+    border-radius: 20%;
+}.nexa-tube-clock-root .pipe-accents .tube-holders{
+    position: absolute;
+    width: 26em;
+    height: 70em;
+    translate: 0 -7em;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+}.nexa-tube-clock-root .pipe-accents .tube-holders div{
+    position: absolute;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    --_metal-1: #30241d;
+    --_metal-2: #000000;
+    --_metal-3: #5f5f5f;
+    --_vl: -8%;
+    background: conic-gradient(from 0deg at 50% 50%, 
+    var(--_metal-1) 0%, 
+    var(--_metal-2) 7%, 
+    var(--_metal-1) 21%, 
+    var(--_metal-2) 35%, 
+    var(--_metal-2) 42%, 
+    var(--_metal-3) 56%, 
+    var(--_metal-1) 63%, 
+    var(--_metal-1) 70%, 
+    var(--_metal-2) 77%, 
+    var(--_metal-3) 84%, 
+    var(--_metal-2) 91%, 
+    var(--_metal-1) 100%);
+    box-shadow: 
+    inset 0 0 0.1em 0.1em #ffffff5d,
+    /* light on */
+    inset 0em -1.2em 0.5em -1.1em var(--m1),
+    inset 0em -1.2em 1em -0.8em var(--m2),
+    inset 0em -1.2em 1em -0.2em var(--m3)
+    /* -------- */;
+}.nexa-tube-clock-root .pipe-accents .tube-holders div:nth-child(1){ top: 12%; left: var(--_vl); rotate: -65deg;}.nexa-tube-clock-root .pipe-accents .tube-holders div:nth-child(2){ top: 12%; right: var(--_vl); rotate: 65deg;}.nexa-tube-clock-root .pipe-accents .tube-holders div:nth-child(3){ top: 26%; left:var(--_vl); rotate: -85deg;}.nexa-tube-clock-root .pipe-accents .tube-holders div:nth-child(4){ top: 26%; right:var(--_vl); rotate: 85deg;}.nexa-tube-clock-root .pipe-accents .tube-holders div:nth-child(5){ top: 78.5%; left:var(--_vl); rotate: -115deg;}.nexa-tube-clock-root .pipe-accents .tube-holders div:nth-child(6){ top: 78.5%; right:var(--_vl); rotate: 115deg;}.nexa-tube-clock-root .pipe-accents .top{
+    position: absolute;
+    top: -0.7%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 22%;
+    height: 6%;
+    background: #040909;
+    background: linear-gradient(120deg, rgba(60,62,62,1) 0%, rgba(4,9,0,1) 60%);
+    box-shadow: 
+    inset -0.2em 1.1em 1.4em -0.4em var(--mw1),
+    /* light on */
+    inset 0em -1.2em 0.5em -1.1em var(--m1),
+    inset 0em -1.2em 1em -0.8em var(--m2),
+    inset 0em -1.2em 1em -0.2em var(--m3)
+    /* -------- */
+    ;
+    border-radius: 20%;
+}.nexa-tube-clock-root .pipe-accents .topinset{
+    position: absolute;
+    top: -1.7%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 14%;
+    height: 8%;
+    background: #040909;
+    background: linear-gradient(120deg, rgba(60,62,62,1) 0%, rgba(4,9,0,1) 60%);
+    box-shadow: 
+    inset -0.2em 1.1em 1.4em -0.4em var(--mw1),
+    /* light on */
+    inset 0em -1.2em 0.5em -1.1em var(--m1),
+    inset 0em -1.2em 1em -0.8em var(--m2),
+    inset 0em -1.2em 1em -0.2em var(--m3)
+    /* -------- */
+    ;
+    border-radius: 50%;
+}.nexa-tube-clock-root .pipe-accents .topinset::before{
+    content: '';
+    display: block;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 
+    inset 0 0 0em 0.1em #040909,
+    /* light on */
+    0 0 0.5em 0.1em var(--_bloom),
+    inset 0 0 1.3em 0.2em var(--_o3),
+    inset 0 0 1.3em 0.4em var(--_o2),
+    inset 0 0 1.3em 0.6em var(--_o1),
+    inset 0 0 1.3em 2em var(--_y1)
+    /* -------- */;
+    animation: 5s flicker linear infinite;
+}
+@keyframes flicker {
+    0% { opacity: 1;}
+    10% { opacity: 1;}
+    11% { opacity: 0.8;}
+    12% { opacity: 1;}
+    65% { opacity: 1;}
+    66% { opacity: 0.7;}
+    67% { opacity: 0.9;}
+    68% { opacity: 1;}
+    69% { opacity: 0.4;}
+    70% { opacity: 1;}
+    100% { top: 1;}
+}.nexa-tube-clock-root .pipe-accents .left,
+.nexa-tube-clock-root .pipe-accents .right{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}.nexa-tube-clock-root .pipe-accents .left div,
+.nexa-tube-clock-root .pipe-accents .right div{
+    --_pipe-pos-x: -3%;
+    position: absolute;
+    margin: auto;
+    width: 14%;
+    height: 2.4%;
+    border-radius: 0.7em;
+    background: #040909;
+}.nexa-tube-clock-root .pipe-accents .left div:nth-child(1){
+    top: 16%;
+    left: var(--_pipe-pos-x);
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    box-shadow: 
+    inset -0.1em 0.4em 0.6em -0.2em var(--mw1),
+    /* light on */
+    inset -1em -0.5em 0.8em -0.8em var(--m3),
+    inset -1em -0.5em 0.9em -0.5em var(--m2),
+    inset -1em -0.5em 1em -0.3em var(--m1);
+    /* -------- */
+}.nexa-tube-clock-root .pipe-accents .left div:nth-child(1)::before{
+    content: '';
+    display: block;
+    width: 98%;
+    height: 1em;
+    background: #040909;
+    position: absolute;
+    left: 78%;
+    top: 40%;
+    rotate: 5deg;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+    box-shadow: 
+    inset 0em 0.3em 0.6em -0.4em var(--mw1),
+    /* light on */
+    inset 1em -0.5em 0.3em -0.5em var(--m3),
+    inset 1em -0.5em 0.4em -0.3em var(--m2),
+    inset 1em -0.5em 0.6em -0.2em var(--m1)
+    /* -------- */;
+}.nexa-tube-clock-root .pipe-accents .left div:nth-child(2){
+    top: 26%;
+    left: var(--_pipe-pos-x);
+    border-top-right-radius: 30%;
+    border-top-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+    box-shadow: 
+    inset -0.1em 0.4em 0.6em -0.2em var(--mw1),
+    /* light on */
+    inset -1em 0em 0.8em -0.6em var(--m3),
+    inset -1em 0em 0.9em 0em var(--m2),
+    inset -1em 0em 1em 0.1em var(--m1);
+    /* -------- */
+}.nexa-tube-clock-root .pipe-accents .left div:nth-child(2)::before{
+    content: '';
+    display: block;
+    width: 98%;
+    height: 1em;
+    background: #040909;
+    position: absolute;
+    left: 78%;
+    top: 0%;
+    rotate: 2deg;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+    box-shadow: 
+    inset 0em 0.3em 0.6em -0.4em var(--mw1),
+    /* light on */
+    inset 1em -0.1em 0.3em 0em var(--m3),
+    inset 1em -0.1em 0.4em 0.2em var(--m2),
+    inset 1em -0.1em 0.6em -0.3em var(--m1)
+    /* -------- */;
+}.nexa-tube-clock-root .pipe-accents .left div:nth-child(3){
+    top: 64%;
+    left: var(--_pipe-pos-x);
+    border-bottom-right-radius: 40%;
+    border-bottom-left-radius: 40%;
+    box-shadow: 
+    inset -0.1em 0.4em 0.6em -0.2em var(--mw1),
+    /* light on */
+    inset -1em 0.3em 0.8em -0.5em var(--m3),
+    inset -1em 0.3em 0.9em -0.3em var(--m2),
+    inset -1em 0.3em 1em 0em var(--m1);
+    /* -------- */
+}.nexa-tube-clock-root .pipe-accents .left div:nth-child(3)::before{
+    content: '';
+    display: block;
+    width: 98%;
+    height: 1em;
+    background: #040909;
+    position: absolute;
+    left: 78%;
+    top: 20%;
+    rotate: -4deg;
+    margin: auto;
+    z-index: -1;
+    box-shadow: 
+    inset 0em 0.3em 0.6em -0.4em var(--mw1),
+    /* light on */
+    inset 1em 0.2em 0.3em -0.1em var(--m3),
+    inset 1em 0.2em 0.4em 0em var(--m2),
+    inset 1em 0.2em 0.6em 0.1em var(--m1)
+    /* -------- */;
+}.nexa-tube-clock-root .pipe-accents .right div:nth-child(1){
+    top: 16%;
+    right: var(--_pipe-pos-x);
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    box-shadow: 
+    inset -0.1em 0.4em 0.6em -0.2em var(--mw1),
+    /* light on */
+    inset 1em -0.5em 0.8em -0.8em var(--m3),
+    inset 1em -0.5em 0.9em -0.5em var(--m2),
+    inset 1em -0.5em 1em -0.3em var(--m1);
+    /* -------- */
+}.nexa-tube-clock-root .pipe-accents .right div:nth-child(1)::before{
+    content: '';
+    display: block;
+    width: 98%;
+    height: 1em;
+    background: #040909;
+    position: absolute;
+    right: 78%;
+    top: 40%;
+    rotate: -5deg;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+    box-shadow: 
+    inset 0em 0.3em 0.6em -0.4em var(--mw1),
+    /* light on */
+    inset -1em -0.5em 0.3em -0.5em var(--m3),
+    inset -1em -0.5em 0.4em -0.3em var(--m2),
+    inset -1em -0.5em 0.6em -0.2em var(--m1)
+    /* -------- */;
+}.nexa-tube-clock-root .pipe-accents .right div:nth-child(2){
+    top: 26%;
+    right: var(--_pipe-pos-x);
+    border-top-right-radius: 30%;
+    border-top-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    border-bottom-left-radius: 30%;
+    box-shadow: 
+    inset -0.1em 0.4em 0.6em -0.2em var(--mw1),
+    /* light on */
+    inset 1em 0em 0.8em -0.6em var(--m3),
+    inset 1em 0em 0.9em 0em var(--m2),
+    inset 1em 0em 1em 0.1em var(--m1);
+    /* -------- */
+}.nexa-tube-clock-root .pipe-accents .right div:nth-child(2)::before{
+    content: '';
+    display: block;
+    width: 98%;
+    height: 1em;
+    background: #040909;
+    position: absolute;
+    right: 78%;
+    top: 0%;
+    rotate: -2deg;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+    box-shadow: 
+    inset 0em 0.3em 0.6em -0.4em var(--mw1),
+    /* light on */
+    inset -1em -0.1em 0.3em 0em var(--m3),
+    inset -1em -0.1em 0.4em 0.2em var(--m2),
+    inset -1em -0.1em 0.6em -0.3em var(--m1)
+    /* -------- */;
+}.nexa-tube-clock-root .pipe-accents .right div:nth-child(3){
+    top: 64%;
+    right: var(--_pipe-pos-x);
+    border-bottom-right-radius: 40%;
+    border-bottom-left-radius: 40%;
+    box-shadow: 
+    inset -0.1em 0.4em 0.6em -0.2em var(--mw1),
+    /* light on */
+    inset 1em 0.3em 0.8em -0.5em var(--m3),
+    inset 1em 0.3em 0.9em -0.3em var(--m2),
+    inset 1em 0.3em 1em 0em var(--m1);
+    /* -------- */
+}.nexa-tube-clock-root .pipe-accents .right div:nth-child(3)::before{
+    content: '';
+    display: block;
+    width: 98%;
+    height: 1em;
+    background: #040909;
+    position: absolute;
+    right: 78%;
+    top: 20%;
+    rotate: 4deg;
+    margin: auto;
+    z-index: -1;
+    box-shadow: 
+    inset 0em 0.3em 0.6em -0.4em var(--mw1),
+    /* light on */
+    inset -1em 0.2em 0.3em -0.1em var(--m3),
+    inset -1em 0.2em 0.4em 0em var(--m2),
+    inset -1em 0.2em 0.6em 0.1em var(--m1)
+    /* -------- */;
+}.nexa-tube-clock-root .pipe-accents .bottom-left{
+    position: absolute;
+    bottom: 12%;
+    left: -6%;
+    width: 20%;
+    height: 2.4%;
+    background: #040909;
+    border-radius: 40%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    box-shadow: 
+    inset -0.4em -0.1em 1em -0.4em var(--mw1),
+    /* light on */
+    inset -2em 0em 1.8em -1.5em var(--m3),
+    inset -2em 0em 1.9em -1.3em var(--m2),
+    inset -2em 0em 2em -1em var(--m1)
+    /* -------- */;
+}.nexa-tube-clock-root .pipe-accents .bottom-left::before{
+    display: block;
+    content: '';
+    position: absolute;
+    top: -24%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #040909;
+    width: 90%;
+    height: 70%;
+    border-radius: 50%;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+    box-shadow: 
+    inset -0.4em 0em 1em -0.3em var(--mw1),
+    /* light on */
+    inset -2em 0em 1.8em -1.5em var(--m3),
+    inset -2em 0em 1.9em -1.3em var(--m2),
+    inset -2em 0em 2em -1em var(--m1)
+    /* -------- */;
+}.nexa-tube-clock-root .pipe-accents .bottom-right{
+    position: absolute;
+    bottom: 12%;
+    right: -6%;
+    width: 20%;
+    height: 2.4%;
+    background: #040909;
+    border-radius: 40%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    box-shadow: 
+    inset -0.4em -0.1em 1em -0.4em var(--mw1),    
+    /* light on */
+    inset 2em 0em 1.8em -1.5em var(--m3),
+    inset 2em 0em 1.9em -1.3em var(--m2),
+    inset 2em 0em 2em -1em var(--m1)
+    /* -------- */;
+}.nexa-tube-clock-root .pipe-accents .bottom-right::before{
+    display: block;
+    content: '';
+    position: absolute;
+    top: -24%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: #040909;
+    width: 90%;
+    height: 70%;
+    border-radius: 50%;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+    box-shadow: 
+    inset -0.4em 0em 1em -0.3em var(--mw1),    
+    /* light on */
+    inset 2em 0em 1.8em -1.5em var(--m3),
+    inset 2em 0em 1.9em -1.3em var(--m2),
+    inset 2em 0em 2em -1em var(--m1)
+    /* -------- */;
+}.nexa-tube-clock-root .small-outer-pipe{
+    position: absolute;
+    translate: 0 -5.6%;
+    width: calc(var(--_size) * (1/2.7));
+    height: calc( var(--_size) * 0.87);
+    border-radius: 40% / 10%;
+    
+    overflow: hidden;
+    opacity: 1;
+    --_clip-btm: 96%;
+    clip-path: polygon(0 0, 100% 0, 100% var(--_clip-btm), 0 var(--_clip-btm));
+    border-top: 0.3em solid var(--mw1);
+}.nexa-tube-clock-root .small-inner-pipe{
+    width: 100%;
+    height: 100%;
+    scale: 0.92 0.98;
+    border-radius: 35% / 10%;
+    box-shadow: 
+    0em -94em 20em 20em #040909,
+    0em 104em 20em 20em #040909,
+    /* light on */
+    0em 1em 1em 0.2em var(--m3),
+    0em 1em 1em 0.5em var(--m2),
+    0em 1em 0.5em 1.2em var(--m1),
+    0em 1em 1.2em 1.5em var(--m2),
+    0em 1em 2em 2em var(--m3),
+    /* ---- */
+    /* nat light */
+    -0.2em 0.5em 0.8em -0.2em var(--mw1),
+    0em 90em 16em 20em #040909,
+    -1em 1em 2em 2em #040909,
+    0.5em 0em 2em 2em #040909,
+    0em 0em 0em 4.6em var(--mw1),
+    0em 0em 1.5em 5em var(--mw1),
+    /* --------- */
+    0em 0em 0em 20em #040909;
+}.nexa-tube-clock-root .base-container{
+    position: absolute;
+    width: calc(var(--_size) * (8/15));
+    height: var(--_size);
+    
+}.nexa-tube-clock-root .base-container .base{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}.nexa-tube-clock-root .base-container .base div{
+    background: #040909;
+    position: absolute;
+    bottom: 4%;
+    left: -10%;
+    width: 120%;
+    height: 12%;
+    border-radius: 40% 40% / 30% 30%;    
+    box-shadow: 
+    0 2em 2em -1.4em #000,
+    inset -0.4em 0.1em 0.8em -0.2em var(--mw1);
+}.nexa-tube-clock-root .base-container .base div::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50%;
+    border-radius: 100%;    
+    box-shadow: 
+    0 2em 10em 0 #000,
+    inset -0.4em 0em 0.8em 0em var(--mw1),
+    inset 0em 0em 0.5em 0.3em #040909,
+    inset 0em 0em 0.5em 0.3em #040909,
+    inset 0em 0em 1em 0em #040909,
+    inset 0em 0em 2em 0em #040909,
+    inset 0em 0em 3em 0em #040909,
+    /* light on */
+    inset 0em 0em 1em 0em var(--m3),
+    inset 0em 0em 1em 2em var(--m2),
+    inset 1em 0.3em 10em 10em var(--m1)
+    /* -------- */;
+}.nexa-tube-clock-root .display{
+    color: var(--_bloom);
+    font-size: 14em;
+    line-height: 0.8em;
+    translate: 0 -0.4em;
+}.nexa-tube-clock-root .display .row{
+    display: flex;
+}.nexa-tube-clock-root .display .small-row{
+    font-size: 0.3em;
+    position: absolute;
+    right: -22%;
+    top: 10%;
+}.nexa-tube-clock-root .display .small-row .row{
+    flex-direction: column;
+    line-height: 1.02em;
+}.nexa-tube-clock-root .display .row .col{
+    display: flex;
+    position: relative;
+}.nexa-tube-clock-root .display .row .col > div:nth-child(1){
+    opacity: 0.2;
+}.nexa-tube-clock-root .display .row .col > div:nth-child(2){
+    position: absolute;
+    right: 0;
+    z-index: 2;
+}.nexa-tube-clock-root .display .row .col > div:nth-child(3){
+    position: absolute;
+    right: 0;
+    color: var(--_bloom);
+    --_o1-size: 0.1em;
+    --_o2-size: 0.4em;
+    --_o3-size: 0.6em;
+    text-shadow: 
+    0em 0em 0.04em var(--_bloom),
+    0em 0em 0.04em var(--_bloom),
+    0em 0em var(--_o3-size) var(--_o3),
+    0em 0em var(--_o3-size) var(--_o3),
+    0em 0em var(--_o3-size) var(--_o3),
+    0em 0em var(--_o3-size) var(--_o3),
+    0em 0em var(--_o2-size) var(--_o2),
+    0em 0em var(--_o2-size) var(--_o2),
+    0em 0em var(--_o2-size) var(--_o2),
+    0em 0em var(--_o2-size) var(--_o2),
+    0em 0em var(--_o1-size) var(--_o1),
+    0em 0em var(--_o1-size) var(--_o1),
+    0em 0em var(--_o1-size) var(--_o1),
+    0em 0em var(--_o1-size) var(--_o1);
+}.nexa-tube-clock-root .glass-tube{
+    position: absolute;
+    width: 26em;
+    height: 70em;
+    translate: 0 -7em;
+    border-radius: 1000px;
+    box-shadow: 
+    /* light on */
+    0em 0em 1em -0.2em var(--m1),
+    0em 0em 2em -0.4em var(--m2),
+    0em 0em 3em -0.4em var(--m2),
+    inset 0em 0em 0.4em 0.2em var(--m3),
+    inset 0em 0em 0.6em 0.4em var(--m2),
+    inset 0em 0em 1em 0.7em var(--m1),
+    inset 0em 0em 3em 0em var(--m2),
+    inset 0em 0em 5em 1em var(--m3),
+    /* -------- */
+    inset -0.1em 0.1em 0.1em 0em var(--mw1),
+    inset 0 0 1em 0.1em var(--mw1);
+}.nexa-tube-clock-root .glass-tube::before{
+    content: "";
+    display: block;
+    width: 6%;
+    opacity: 0.9;
+    height: 60%;
+    box-shadow: 
+    inset 1.5em 0em 1em -1em var(--mw1);
+    position: absolute;
+    left: 4%;
+    top: 16%;
+    filter: blur(0.6px);
+    opacity: 0.8;
+    border-radius: 50% 1% / 50% 100%;
+}.nexa-tube-clock-root .glass-tube::after{
+    content: "";
+    display: block;
+    width: 30%;
+    opacity: 0.9;
+    height: 60%;
+    box-shadow: 
+    inset -1em 0.5em 1em -1em var(--mw1);
+    position: absolute;
+    right: 4%;
+    top: 4%;
+    filter: blur(0.6px);
+    opacity: 1;
+    border-radius: 0% 100% / 10% 30%;
+}.nexa-tube-clock-root .hex{
+    position: absolute;
+    width: 17.7em;
+    height: 70em;
+    translate: 0 -7em;
+    border-radius: 1000px;
+    overflow: hidden;
+    z-index: -1;
+    opacity: 0.7;
+    --_hex-cl1: #040909;
+    --_hex-cl2: var(--_o1);
+    --_hex-size: 2.18em;
+    background:
+    radial-gradient(circle farthest-side at 0% 50%, var(--_hex-cl1) 23.5%,rgba(240,166,17,0) 0) calc(1.06*var(--_hex-size)) calc(1.5*var(--_hex-size)),
+    radial-gradient(circle farthest-side at 0% 50%, var(--_hex-cl2) 24%,rgba(240,166,17,0) 0) calc(0.94*var(--_hex-size)) calc(1.5*var(--_hex-size)),
+    linear-gradient( var(--_hex-cl1) 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%, var(--_hex-cl1) 0)0 0,
+    linear-gradient(150deg, var(--_hex-cl1) 24%, var(--_hex-cl2) 0, var(--_hex-cl2) 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%, var(--_hex-cl2) 0, var(--_hex-cl2) 76%, var(--_hex-cl1) 0)0 0,
+    linear-gradient(30deg, var(--_hex-cl1) 24%, var(--_hex-cl2) 0, var(--_hex-cl2) 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%, var(--_hex-cl2) 0, var(--_hex-cl2) 76%, var(--_hex-cl1) 0)0 0,
+    linear-gradient(90deg, var(--_hex-cl2) 2%, var(--_hex-cl1) 0, var(--_hex-cl1) 98%, var(--_hex-cl2) 0%)0 0  var(--_hex-cl1);
+    background-size:calc(2*var(--_hex-size)) calc(3*var(--_hex-size));
+}.nexa-tube-clock-root .hex .overlay{
+    position: absolute;
+    background: #fff;
+    mix-blend-mode: overlay;
+    width: 200%;
+    left: -40%;
+    height: 12%;
+    rotate: 40deg;
+    animation: 5s electric ease-in infinite;
+}
+@keyframes electric {
+    0% { top: 700%;}
+    100% { top: -20%;}
+}.nexa-tube-clock-root .tube-base-container{
+    position: absolute;
+    width: 34em;
+    height: 30em;
+    translate: 0 24em;
+}.nexa-tube-clock-root .tube-base{
+    position: absolute;
+    bottom: 4%;
+    width: 60%;
+    height: 20%;
+    background: #040909;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 80% / 40%;
+    box-shadow: 
+    inset 0em -0.1em 1.2em -0.4em var(--mw1),
+    /* light on */
+    inset 0em 3em 2.8em -2.5em var(--m3),
+    inset 0em 3em 3.9em -2.3em var(--m2),
+    inset 0em 3em 4em -2em var(--m1)
+    /* -------- */;
+}.nexa-tube-clock-root .tube-base::before{
+    display: block;
+    content: '';
+    width: 99%;
+    height: 42%;
+    background: #040909;
+    border-radius: 50%;
+    box-shadow: 
+    inset 0em -0.1em 1.2em -0.4em var(--mw1),
+    /* light on */
+    inset 0em 0em 1.8em -0.5em var(--m3),
+    inset 0em 0em 1.9em -0.3em var(--m2),
+    inset 0em 0em 2em -0em var(--m1)
+    /* -------- */;
+}.nexa-tube-clock-root .tube-btm{
+    width: 40%;
+    height: 10%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 34%;
+    background-color: #040909;
+    border-radius: 20% 20% 100% 100%;
+    box-shadow: 
+    inset 0em 0em 1.2em -0.2em var(--mw1),
+    /* light on */
+    inset 0em 0.3em 1.2em 0em var(--m1),
+    inset 0em 0.3em 1.2em 0.3em var(--m2),
+    inset 0em 0.3em 1.2em 0.6em var(--m3)
+    /* -------- */;
+}.nexa-tube-clock-root .tube-btm::before{
+    content: '';
+    display: block;
+    width: 60%;
+    height: 40%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -158%;
+    border-radius: 30% 30% 100% 100%;
+    background-color: #040909;
+    box-shadow: 
+    inset 0em -0.1em 0.7em -0.2em var(--mw1),
+    /* light on */
+    inset 0em 0.1em 1em -0.7em var(--m1),
+    inset 0em 0.1em 1em -0.3em var(--m2),
+    inset 0em 0.1em 1em -0em var(--m3)
+    /* -------- */;
+}.nexa-tube-clock-root .rods{
+    width: 50%;
+    height: 28%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 14%;
+    --_clip-btm: 80%;
+    clip-path: polygon(0 0, 100% 0, 100% var(--_clip-btm), 0 var(--_clip-btm));
+}.nexa-tube-clock-root .rods .left-rod{
+    width: 60%;
+    height: 12%;
+    rotate: 60deg;
+    position: absolute;
+    bottom: 40%;
+    left: 0;
+    background: #040909;
+}.nexa-tube-clock-root .rods .center-rod{
+    width: 30%;
+    height: 12%;
+    rotate: 90deg;
+    position: absolute;
+    bottom: 40%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    background: #040909;
+}.nexa-tube-clock-root .rods .right-rod{
+    width: 60%;
+    height: 12%;
+    rotate: -60deg;
+    position: absolute;
+    bottom: 40%;
+    right: 0;
+    background: #040909;
+}.nexa-tube-clock-root .rods .left-rod,
+.nexa-tube-clock-root .rods .center-rod,
+.nexa-tube-clock-root .rods .right-rod{
+    box-shadow: 
+    inset 0em 0.1em 0.8em -0.2em var(--mw1),
+    /* light on */
+    inset 0em 0.1em 1em -0.7em var(--m1),
+    inset 0em 0.1em 1em -0.3em var(--m2),
+    inset 0em 0.1em 1em -0em var(--m3)
+    /* -------- */;
+}.nexa-tube-clock-root .wires{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}.nexa-tube-clock-root .wires div:nth-child(1),
+.nexa-tube-clock-root .wires div:nth-child(2){
+    width: 18%;
+    height: 18%;
+    rotate: 25deg;
+    translate: 14em -5em;
+    position: absolute;
+    bottom: 0;
+    box-shadow: 
+    inset 0em 0.1em 0.4em 0em var(--mw1),
+    inset 0 0 0 0.5em #040909;
+    border-radius: 0% 100% / 50% 100%;
+}.nexa-tube-clock-root .wires div:nth-child(2){
+    translate: 15em -8em;
+    rotate: 122deg;
+    scale: 0.7;
+}.nexa-tube-clock-root .button{
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    translate: 0 0em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    translate: 0 43em;
+    z-index: 100;
+    cursor: pointer;
+    background: var(--_bloom);
+    box-shadow: 
+    0em -0.1em 0.2em 0em var(--_o1),
+    0em -0.1em 0.2em 0.1em var(--_o2),
+    0em -0.1em 0.2em 0.2em var(--_o3),
+    0em -0.1em 1em 0.5em var(--_bloom),
+    /* light on */
+    inset 0em 0em 1em 0em var(--_o3),
+    inset 0em 0em 1em 0.5em var(--_o2),
+    inset 0em 0em 1em 1em var(--_o1)
+    /* -------- */
+    ;
+    filter: blur(1px);
+}.nexa-tube-clock-root .power-cord{
+    z-index: -1;
+    scale: 1.4 0.9;
+    position: absolute;
+    width: 100%;
+    height: 50em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    translate: -36em 44em;
+    transform: rotateX(55deg) rotateZ(-64deg);
+}.nexa-tube-clock-root .power-cord div:nth-child(1){
+    width: 20em;
+    height: 18em;
+    box-shadow: 0.3em 0.3em 0.2em 0.1em rgba(255, 255, 255, 0.2);
+    border-bottom: 6px solid #040909;
+    border-right: 4px solid #040909;
+    position: absolute;
+    left: 0;
+    right: 0;
+    translate: 39.3em 0em;
+    margin: auto;
+    bottom: 4%;
+    border-radius:  100% 30% / 100% 0;
+}.nexa-tube-clock-root .power-cord div:nth-child(2){
+    width: 20em;
+    height: 12em;
+    box-shadow: inset 0.3em 0.1em 0.2em -0.1em rgba(255, 255, 255, 0.2);
+    border-top: 3px solid #04090977;
+    border-left: 4px solid #040909;
+    position: absolute;
+    translate: 58em 0.2em;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 40%;
+    border-radius:  100% 30% / 100% 0;
+}.nexa-tube-clock-root /* --------------- */
+/* -- CLOCK OFF -- */
+/* --------------- */
+*,
+.nexa-tube-clock-root *:before,
+.nexa-tube-clock-root *:after{
+    transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    user-select: none;
+}.nexa-tube-clock-root .clock.off .hex{
+    opacity: 0.3;
+    filter: grayscale(1);
+}.nexa-tube-clock-root .clock.off .hex .overlay{
+    display: none;
+}.nexa-tube-clock-root .clock.off .pipe-accents .top-tube,
+.nexa-tube-clock-root .clock.off .pipe-accents .top,
+.nexa-tube-clock-root .clock.off .pipe-accents .topinset{
+    box-shadow: 
+    inset -0.2em 1.1em 1.4em -0.4em var(--mw1),
+    /* light off */
+    inset 0em -1.2em 0.5em -1.1em rgba(0, 0, 0, 0),
+    inset 0em -1.2em 1em -0.8em rgba(0, 0, 0, 0),
+    inset 0em -1.2em 1em -0.2em rgba(0, 0, 0, 0)
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .pipe-accents .topinset::before{
+    box-shadow: 
+    inset 0 0 0em 0.1em #040909,
+    /* light off */
+    -0.1em 0.2em 0.7em 0.1em rgba(255,255,255, 0.4),
+    inset 0 0 1.3em 0.2em rgba(0, 0, 0, 0),
+    inset 0 0 1.3em 0.4em rgba(0, 0, 0, 0),
+    inset 0 0 1.3em 0.6em rgba(0, 0, 0, 0),
+    inset 0 0 1.3em 2em rgba(0, 0, 0, 0)
+    /* -------- */;
+    animation-play-state: paused;
+}.nexa-tube-clock-root .clock.off .pipe-accents .tube-holders div{
+    box-shadow: 
+    inset 0 0 0.1em 0.1em #ffffff5d,
+    /* light off */
+    inset 0em -1.2em 0.5em -1.1em rgba(0, 0, 0, 0),
+    inset 0em -1.2em 1em -0.8em rgba(0, 0, 0, 0),
+    inset 0em -1.2em 1em -0.2em rgba(0, 0, 0, 0)
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .inner-pipe{
+    box-shadow: 
+    0em 104em 16em 20em #040909,
+    /* light off */
+    0em 1.2em 1em 0.2em rgba(0, 0, 0, 0),
+    0em 1.2em 1em 0.5em rgba(0, 0, 0, 0),
+    0em 1.2em 0.5em 1.2em rgba(0, 0, 0, 0),
+    0em 1.2em 1.2em 1.5em rgba(0, 0, 0, 0),
+    0em 1.2em 2em 2em rgba(0, 0, 0, 0),
+    /* ---- */
+    0em 90em 16em 20em #040909,
+    /* nat light */
+    -1em 1em 2em 3.7em #040909,
+    0.5em 0em 2em 3.7em #040909,
+    0em 0em 0em 4.6em var(--mw1),
+    0em 0em 0.5em 5em var(--mw1),
+    /* --------- */
+    0em 0em 0em 20em #040909;
+}.nexa-tube-clock-root .clock.off .small-inner-pipe{
+    width: 100%;
+    height: 100%;
+    scale: 0.92 0.98;
+    border-radius: 35% / 10%;
+    box-shadow: 
+    0em -94em 20em 20em #040909,
+    0em 104em 20em 20em #040909,
+    /* light off */
+    0em 1em 1em 0.2em rgba(0, 0, 0, 0),
+    0em 1em 1em 0.5em rgba(0, 0, 0, 0),
+    0em 1em 0.5em 1.2em rgba(0, 0, 0, 0),
+    0em 1em 1.2em 1.5em rgba(0, 0, 0, 0),
+    0em 1em 2em 2em rgba(0, 0, 0, 0),
+    /* ---- */
+    /* nat light */
+    -0.2em 0.5em 0.8em -0.2em var(--mw1),
+    0em 90em 16em 20em #040909,
+    -1em 1em 2em 2em #040909,
+    0.5em 0em 2em 2em #040909,
+    0em 0em 0em 4.6em var(--mw1),
+    0em 0em 1.5em 5em var(--mw1),
+    /* --------- */
+    0em 0em 0em 20em #040909;
+}.nexa-tube-clock-root .clock.off .pipe-accents .bottom-left{
+    box-shadow: 
+    inset -0.4em -0.1em 1em -0.4em var(--mw1),
+    /* light off */
+    inset -3em 0em 1.8em -1.5em rgba(0, 0, 0, 0),
+    inset -3em 0em 1.9em -1.3em rgba(0, 0, 0, 0),
+    inset -3em 0em 2em -1em rgba(0, 0, 0, 0)
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .pipe-accents .bottom-left::before{
+    box-shadow: 
+    inset -0.4em 0em 1em -0.3em var(--mw1),
+    /* light off */
+    inset -3em 0em 1.8em -1.5em rgba(0, 0, 0, 0),
+    inset -3em 0em 1.9em -1.3em rgba(0, 0, 0, 0),
+    inset -3em 0em 2em -1em rgba(0, 0, 0, 0)
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .pipe-accents .bottom-right{
+    box-shadow: 
+    inset -0.4em -0.1em 1em -0.4em var(--mw1),    
+    /* light off */
+    inset 3em 0em 1.8em -1.5em rgba(0, 0, 0, 0),
+    inset 3em 0em 1.9em -1.3em rgba(0, 0, 0, 0),
+    inset 3em 0em 2em -1em rgba(0, 0, 0, 0)
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .pipe-accents .bottom-right::before{
+    box-shadow: 
+    inset -0.4em 0em 1em -0.3em var(--mw1),    
+    /* light off */
+    inset 3em 0em 1.8em -1.5em rgba(0, 0, 0, 0),
+    inset 3em 0em 1.9em -1.3em rgba(0, 0, 0, 0),
+    inset 3em 0em 2em -1em rgba(0, 0, 0, 0)
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .pipe-accents .left div:nth-child(1){
+    box-shadow: 
+    inset -0.1em 0.4em 0.6em -0.2em var(--mw1),
+    /* light off */
+    inset -1em -0.5em 0.8em -0.8em rgba(0, 0, 0, 0),
+    inset -1em -0.5em 0.9em -0.5em rgba(0, 0, 0, 0),
+    inset -1em -0.5em 1em -0.3em rgba(0, 0, 0, 0);
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .pipe-accents .left div:nth-child(1)::before,
+.nexa-tube-clock-root .clock.off .pipe-accents .left div:nth-child(2)::before,
+.nexa-tube-clock-root .clock.off .pipe-accents .left div:nth-child(3)::before,
+.nexa-tube-clock-root .clock.off .pipe-accents .right div:nth-child(1)::before,
+.nexa-tube-clock-root .clock.off .pipe-accents .right div:nth-child(2)::before,
+.nexa-tube-clock-root .clock.off .pipe-accents .right div:nth-child(3)::before{
+    box-shadow: 
+    inset 0em 0.3em 0.6em -0.3em var(--mw1),
+    /* light off */
+    inset 1em -0.5em 0.3em -0.5em rgba(0, 0, 0, 0),
+    inset 1em -0.5em 0.4em -0.3em rgba(0, 0, 0, 0),
+    inset 1em -0.5em 0.6em -0.2em rgba(0, 0, 0, 0)
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .pipe-accents .left div:nth-child(2){
+    box-shadow: 
+    inset -0.1em 0.4em 0.6em -0.2em var(--mw1),
+    /* light off */
+    inset -1em 0em 0.8em -0.6em rgba(0, 0, 0, 0),
+    inset -1em 0em 0.9em 0em rgba(0, 0, 0, 0),
+    inset -1em 0em 1em 0.1em rgba(0, 0, 0, 0);
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .pipe-accents .left div:nth-child(3){
+    box-shadow: 
+    inset -0.1em 0.4em 0.6em -0.2em var(--mw1),
+    /* light off */
+    inset -1em 0.3em 0.8em -0.5em rgba(0, 0, 0, 0),
+    inset -1em 0.3em 0.9em -0.3em rgba(0, 0, 0, 0),
+    inset -1em 0.3em 1em 0em rgba(0, 0, 0, 0);
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .pipe-accents .right div:nth-child(1){
+    box-shadow: 
+    inset -0.1em 0.4em 0.6em -0.2em var(--mw1),
+    /* light off */
+    inset 1em -0.5em 0.8em -0.8em rgba(0, 0, 0, 0),
+    inset 1em -0.5em 0.9em -0.5em rgba(0, 0, 0, 0),
+    inset 1em -0.5em 1em -0.3em rgba(0, 0, 0, 0);
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .pipe-accents .right div:nth-child(2){
+    box-shadow: 
+    inset -0.1em 0.4em 0.6em -0.2em var(--mw1),
+    /* light off */
+    inset 1em 0em 0.8em -0.6em rgba(0, 0, 0, 0),
+    inset 1em 0em 0.9em 0em rgba(0, 0, 0, 0),
+    inset 1em 0em 1em 0.1em rgba(0, 0, 0, 0);
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .pipe-accents .right div:nth-child(3){
+    box-shadow: 
+    inset -0.1em 0.4em 0.6em -0.2em var(--mw1),
+    /* light off */
+    inset 1em 0.3em 0.8em -0.5em rgba(0, 0, 0, 0),
+    inset 1em 0.3em 0.9em -0.3em rgba(0, 0, 0, 0),
+    inset 1em 0.3em 1em 0em rgba(0, 0, 0, 0);
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .base-container .base div::before{
+    box-shadow: 
+    0 2em 10em 0 #000,
+    inset -0.4em 0em 0.8em 0em var(--mw1),
+    inset 0em 0em 0.5em 0.3em #040909,
+    inset 0em 0em 0.5em 0.3em #040909,
+    inset 0em 0em 1em 0em #040909,
+    inset 0em 0em 2em 0em #040909,
+    inset 0em 0em 3em 0em #040909,
+    /* light off */
+    inset 0em 0em 1em 0em rgba(0, 0, 0, 0),
+    inset 0em 0em 1em 2em rgba(0, 0, 0, 0),
+    inset 1em 0.3em 10em 10em rgba(0, 0, 0, 0)
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .display .row .col > div:nth-child(2){
+    opacity: 0;
+}.nexa-tube-clock-root .clock.off .display .row .col > div:nth-child(3){
+    opacity: 0;
+}.nexa-tube-clock-root .clock.off .glass-tube{
+    box-shadow: 
+    /* light off */
+    0em 0em 1em -0.2em rgba(0, 0, 0, 0),
+    0em 0em 2em -0.4em rgba(0, 0, 0, 0),
+    0em 0em 3em -0.4em rgba(0, 0, 0, 0),
+    inset 0em 0em 0.4em 0.2em rgba(0, 0, 0, 0),
+    inset 0em 0em 0.6em 0.4em rgba(0, 0, 0, 0),
+    inset 0em 0em 1em 0.7em rgba(0, 0, 0, 0),
+    inset 0em 0em 3em 0em rgba(0, 0, 0, 0),
+    inset 0em 0em 5em 1em rgba(0, 0, 0, 0),
+    /* -------- */
+    inset -0.1em 0.1em 0.1em 0em var(--mw1),
+    inset 0 0 1em 0.1em var(--mw1);
+}.nexa-tube-clock-root .clock.off .tube-base{
+    box-shadow: 
+    inset 0em -0.1em 1.2em -0.4em var(--mw1),
+    /* light off */
+    inset 0em 3em 2.8em -2.5em rgba(0, 0, 0, 0),
+    inset 0em 3em 3.9em -2.3em rgba(0, 0, 0, 0),
+    inset 0em 3em 4em -2em rgba(0, 0, 0, 0)
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .tube-base::before{
+    box-shadow: 
+    inset 0em -0.1em 1.2em -0.4em var(--mw1),
+    /* light off */
+    inset 0em 0em 1.8em -0.5em rgba(0, 0, 0, 0),
+    inset 0em 0em 1.9em -0.3em rgba(0, 0, 0, 0),
+    inset 0em 0em 2em -0em rgba(0, 0, 0, 0)
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .tube-btm{
+    box-shadow: 
+    inset 0em 0em 1.2em -0.2em var(--mw1),
+    /* light off */
+    inset 0em 0.3em 1.2em 0em rgba(0, 0, 0, 0),
+    inset 0em 0.3em 1.2em 0.3em rgba(0, 0, 0, 0),
+    inset 0em 0.3em 1.2em 0.6em rgba(0, 0, 0, 0)
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .tube-btm::before{
+    box-shadow: 
+    inset 0em -0.1em 0.7em -0.2em var(--mw1),
+    /* light off */
+    inset 0em 0.1em 1em -0.7em rgba(0, 0, 0, 0),
+    inset 0em 0.1em 1em -0.3em rgba(0, 0, 0, 0),
+    inset 0em 0.1em 1em -0em rgba(0, 0, 0, 0)
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .rods .left-rod,
+.nexa-tube-clock-root .clock.off .rods .center-rod,
+.nexa-tube-clock-root .clock.off .rods .right-rod{
+    box-shadow: 
+    inset 0em 0.1em 0.8em -0.2em var(--mw1),
+    /* light off */
+    inset 0em 0.1em 1em -0.7em rgba(0, 0, 0, 0),
+    inset 0em 0.1em 1em -0.3em rgba(0, 0, 0, 0),
+    inset 0em 0.1em 1em -0em rgba(0, 0, 0, 0)
+    /* -------- */;
+}.nexa-tube-clock-root .clock.off .wires div:nth-child(1),
+.nexa-tube-clock-root .clock.off .wires div:nth-child(2){
+    box-shadow: 
+    inset 0em 0.1em 0.4em -0.1em var(--mw1),
+    inset 0 0 0 0.5em #040909;
+}.nexa-tube-clock-root .clock.off .button{
+    background: #8d8d8d;
+    box-shadow: 
+    0em -0.1em 0.2em 0em #040909,
+    0em -0.1em 0.2em 0.1em #040909,
+    0em 0em 1em 0.5em var(--_bloom),
+    0em -0.1em 1em 0.5em #040909,
+    /* light off */
+    inset 0em 0em 1em 0em var(--mw1),
+    inset 0em 0em 1em 0.5em var(--mw1),
+    inset 0em 0em 1em 1em var(--mw1)
+    /* -------- */
+    ;
+    filter: blur(0.7px);
+    animation: 5s flicker linear infinite;
+}
+
+
+/* Nexa Utility Tube Clock integration */
+.nexa-tube-clock-root {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    overflow: hidden;
+    display: block;
+    background: transparent !important;
+    container-type: size;
+    isolation: isolate;
+}
+
+.nexa-tube-clock-root .clock {
+    --_factor: min(460px, 94cqh);
+    --_size: min(var(--_factor), 76cqw);
+    width: 100%;
+    height: 100%;
+    background: transparent !important;
+}
+
+.nexa-tube-clock-root #noise-svg {
+    opacity: 0.055;
+    z-index: 0;
+}
+
+.nexa-tube-clock-root .shadow {
+    opacity: 0.48;
+    mix-blend-mode: screen;
+}
+
+.nexa-tube-clock-root .button {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .nexa-tube-clock-root {
+        min-height: 330px;
+    }
+
+    .nexa-tube-clock-root .clock {
+        --_factor: min(400px, 88cqh);
+        --_size: min(var(--_factor), 70cqw);
+    }
+}
+/* === NEXA TUBE CLOCK END === */
+
+/* =========================================================
+   RESPONSIVE SAFETY
+   ========================================================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+body {
+  min-width: 0;
+}
+
+#__next {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/*
+ * Prevent decorative / animated elements from creating
+ * horizontal page overflow.
+ */
+.nexa-hero,
+.nexa-hero * {
+  max-width: 100%;
+}
+
+.nexa-hero {
+  isolation: isolate;
+}
+
+/*
+ * Better mobile tap behavior.
+ */
+@media (max-width: 639px) {
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/*
+ * Respect reduced-motion preferences.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* =========================================================
+   Nexa responsive dashboard containment
+   ========================================================= */
+
+.nexa-hero {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.nexa-hero iframe {
+  display: block;
+  max-width: 100%;
+}
+
+.nexa-home-hero {
+  background: var(--nexa-home-bg);
+}
+
+.nexa-home-shell {
+  color: var(--nexa-home-text);
+  background: var(--nexa-home-bg);
+  transition: background 300ms ease, color 300ms ease;
+}
+
+.nexa-app-dock {
+  color: var(--nexa-muted);
+  background: color-mix(in srgb, var(--nexa-bg-secondary), transparent 12%);
+  box-shadow: 0 16px 44px rgb(0 0 0 / 0.28);
+  backdrop-filter: blur(22px);
+}
+
+.nexa-app-dock-item {
+  color: var(--nexa-muted);
+}
+
+.nexa-app-dock-item:hover {
+  color: var(--nexa-text);
+  background: color-mix(in srgb, var(--nexa-text), transparent 92%);
+}
+
+.nexa-app-dock-active {
+  color: var(--nexa-accent-strong);
+  background: color-mix(in srgb, var(--nexa-accent) 15%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--nexa-accent) 28%, transparent);
+  font-weight: 600;
+}
+
+.nexa-app-pin-action,
+.nexa-app-pin-active {
+  color: var(--nexa-muted);
+  background: color-mix(in srgb, var(--nexa-bg-secondary) 88%, transparent);
+}
+
+.nexa-app-pin-action:hover,
+.nexa-app-pin-active {
+  color: var(--nexa-accent-strong);
+  background: color-mix(in srgb, var(--nexa-accent) 18%, var(--nexa-bg-secondary));
+}
+
+.nexa-home-shell .nexa-app-dock {
+  color: var(--nexa-home-muted);
+  background: color-mix(in srgb, var(--nexa-home-bg), transparent 12%);
+}
+
+.nexa-home-shell .nexa-app-dock-item {
+  color: var(--nexa-home-muted);
+}
+
+.nexa-home-shell .nexa-app-dock-item:hover {
+  color: var(--nexa-home-text);
+  background: color-mix(in srgb, var(--nexa-home-text), transparent 92%);
+}
+
+.nexa-home-shell .nexa-app-dock-active {
+  color: var(--nexa-home-bg);
+  background: var(--nexa-home-accent);
+  box-shadow: 0 0 22px rgb(var(--nexa-home-accent-rgb) / 0.26);
+}
+
+.nexa-home-shell .nexa-app-pin-action,
+.nexa-home-shell .nexa-app-pin-active {
+  color: var(--nexa-home-muted);
+  background: color-mix(in srgb, var(--nexa-home-bg) 88%, transparent);
+}
+
+.nexa-home-shell .nexa-app-pin-action:hover,
+.nexa-home-shell .nexa-app-pin-active {
+  color: var(--nexa-home-accent-bright);
+  background: color-mix(in srgb, var(--nexa-home-accent) 22%, var(--nexa-home-bg));
+}
+
+.nexa-home-header {
+  color: var(--nexa-home-text);
+  background-color: var(--nexa-home-header);
+}
+
+.nexa-home-nav {
+  color: var(--nexa-home-muted);
+}
+
+.nexa-home-nav a:hover {
+  color: var(--nexa-home-accent);
+}
+
+.nexa-home-horizon-glow {
+  background: radial-gradient(ellipse at 52% 50%, rgb(var(--nexa-home-accent-rgb) / 0.2), transparent 66%);
+}
+
+.nexa-home-text { color: var(--nexa-home-text); }
+.nexa-home-muted { color: var(--nexa-home-muted); }
+.nexa-home-accent { color: var(--nexa-home-accent); }
+
+.nexa-home-accent-bg {
+  color: var(--nexa-home-bg);
+  background: var(--nexa-home-accent);
+  box-shadow: 0 0 24px rgb(var(--nexa-home-accent-rgb) / 0.35);
+}
+
+.nexa-home-status-dot,
+.nexa-home-live-dot {
+  background: var(--nexa-home-accent);
+  box-shadow: 0 0 12px rgb(var(--nexa-home-accent-rgb) / 0.8);
+}
+
+.nexa-home-command {
+  color: var(--nexa-home-muted);
+  border-color: rgb(var(--nexa-home-accent-rgb) / 0.18);
+  background: var(--nexa-home-command-bg);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.24);
+}
+
+.nexa-home-command:hover {
+  border-color: rgb(var(--nexa-home-accent-rgb) / 0.55);
+  background: color-mix(in srgb, var(--nexa-home-command-bg), var(--nexa-home-accent) 7%);
+}
+
+.nexa-home-live-badge {
+  border-color: rgb(var(--nexa-home-accent-rgb) / 0.32);
+  background: var(--nexa-home-date-bg);
+  box-shadow: 0 0 24px rgb(var(--nexa-home-accent-rgb) / 0.12);
+}
+
+.nexa-home-date {
+  border-color: rgb(var(--nexa-home-accent-rgb) / 0.2);
+  background: var(--nexa-home-date-bg);
+}
+
+.nexa-home-backdrop {
+  background:
+    radial-gradient(ellipse at 79% 44%, rgb(var(--nexa-home-accent-rgb) / 0.13), transparent 39%),
+    radial-gradient(ellipse at 48% 100%, rgb(var(--nexa-home-accent-rgb) / 0.09), transparent 36%),
+    linear-gradient(115deg, var(--nexa-home-bg) 8%, color-mix(in srgb, var(--nexa-home-bg), #101923 45%) 57%, color-mix(in srgb, var(--nexa-home-bg), var(--nexa-home-accent) 8%) 100%);
+}
+
+.nexa-hero-planet {
+  border: 0;
+  background:
+    radial-gradient(circle at 35% 27%, rgb(var(--nexa-home-accent-rgb) / 0.16), transparent 37%),
+    radial-gradient(circle at 39% 38%, rgba(16, 26, 37, 0.08), rgba(2, 5, 9, 0.78) 72%),
+    linear-gradient(135deg, rgba(34, 53, 72, 0.3), rgba(2, 5, 9, 0.2) 56%);
+  box-shadow:
+    inset -80px -24px 120px rgba(0, 0, 0, 0.72),
+    inset 24px 18px 54px rgba(120, 158, 190, 0.05),
+    0 0 90px rgb(var(--nexa-home-accent-rgb) / 0.06);
+}
+
+.nexa-orange-gradient {
+  background: linear-gradient(100deg, var(--nexa-home-accent) 5%, var(--nexa-home-accent-bright) 58%, var(--nexa-home-text) 100%);
+  background-clip: text;
+  color: transparent;
+}
+
+.nexa-clock-halo {
+  background: radial-gradient(circle, rgb(var(--nexa-home-accent-rgb) / 0.2), rgb(var(--nexa-home-accent-rgb) / 0.055) 40%, transparent 70%);
+  filter: blur(18px);
+}
+
+@media (max-width: 1023px) {
+  .nexa-hero-planet {
+    right: -37%;
+    top: 13%;
+    width: 104vw;
+    opacity: 0.75;
+  }
+}
+
+@media (max-width: 639px) {
+  .nexa-home-hero {
+    min-height: calc(100svh - 68px);
+  }
+}
+
+.nexa-nixie-halo {
+  background: radial-gradient(ellipse, rgb(var(--nexa-home-accent-rgb) / 0.25), rgb(var(--nexa-home-accent-rgb) / 0.07) 42%, transparent 74%);
+  filter: blur(24px);
+}
+
+.nexa-nixie-tube {
+  position: relative;
+  display: inline-flex;
+  width: clamp(1.9rem, 5.2vw, 4.1rem);
+  height: clamp(4.5rem, 12vw, 8.6rem);
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(177, 194, 207, 0.38);
+  border-radius: 1.15rem 1.15rem 0.8rem 0.8rem;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.1), transparent 15%, transparent 78%, rgba(255,255,255,0.12)),
+    linear-gradient(180deg, #161c22 0%, #080b0f 17%, #090a0c 84%, #24201d 100%);
+  box-shadow:
+    inset 0 0 0 2px rgba(0,0,0,0.82),
+    inset 0 0 22px rgb(var(--nexa-home-accent-rgb) / 0.12),
+    0 10px 18px rgba(0,0,0,0.62),
+    0 0 20px rgb(var(--nexa-home-accent-rgb) / 0.11);
+}
+
+.nexa-nixie-tube::before {
+  position: absolute;
+  inset: 8% 12%;
+  border-right: 1px solid rgba(255,255,255,0.12);
+  border-left: 1px solid rgba(255,255,255,0.08);
+  border-radius: 50%;
+  background: linear-gradient(90deg, rgba(255,255,255,0.04), transparent 35%, rgba(255,255,255,0.035));
+  content: "";
+}
+
+.nexa-nixie-tube::after {
+  position: absolute;
+  top: 3%;
+  left: 31%;
+  width: 38%;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #222a30, #78818a, #1a2025);
+  box-shadow: 0 2px 3px rgba(0,0,0,0.8);
+  content: "";
+}
+
+.nexa-nixie-tube span {
+  position: relative;
+  z-index: 1;
+  color: var(--nexa-home-accent-bright);
+  font-family: "LCD", "Courier New", monospace;
+  font-size: clamp(2.35rem, 5.6vw, 5.1rem);
+  font-weight: 400;
+  line-height: 1;
+  text-shadow: 0 0 5px var(--nexa-home-accent), 0 0 14px rgb(var(--nexa-home-accent-rgb) / 0.95), 0 0 30px rgb(var(--nexa-home-accent-rgb) / 0.62);
+}
+
+.nexa-nixie-colon {
+  margin: 0 0.05em;
+  color: var(--nexa-home-accent);
+  font-family: "LCD", "Courier New", monospace;
+  font-size: clamp(2.8rem, 5.9vw, 5.3rem);
+  line-height: 1;
+  text-shadow: 0 0 8px rgb(var(--nexa-home-accent-rgb) / 0.95), 0 0 24px rgb(var(--nexa-home-accent-rgb) / 0.6);
+}
+
+.nexa-nixie-platform {
+  background: linear-gradient(180deg, #24292d 0%, #07090b 18%, #050607 76%, #141516 100%);
+  box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.25),
+    inset 0 -8px 12px rgba(0,0,0,0.9),
+    0 14px 20px rgba(0,0,0,0.62),
+    0 0 30px rgb(var(--nexa-home-accent-rgb) / 0.22);
+}
+
+.nexa-nixie-platform-top {
+  background: linear-gradient(90deg, transparent, var(--nexa-home-accent) 10%, var(--nexa-home-accent-bright) 50%, var(--nexa-home-accent) 90%, transparent);
+  box-shadow: 0 0 14px rgb(var(--nexa-home-accent-rgb) / 0.85);
+}
+
+.nexa-nixie-platform-foot {
+  background: linear-gradient(180deg, #111416, #030405);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.7);
+}
+
+@media (max-width: 639px) {
+  .nexa-nixie-tube {
+    width: clamp(1.75rem, 8vw, 2.7rem);
+    height: clamp(4.2rem, 20vw, 6rem);
+  }
+
+  .nexa-nixie-tube span {
+    font-size: clamp(2rem, 9vw, 3.2rem);
+  }
+
+  .nexa-nixie-colon {
+    font-size: clamp(2.4rem, 9vw, 3.3rem);
+  }
+}
+
+@media (max-width: 1279px) {
+  .nexa-hero {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 767px) {
+  .nexa-hero {
+    border-radius: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nexa-hero {
+    border-radius: 1.25rem;
+  }
+}
