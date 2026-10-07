@@ -1,0 +1,75 @@
+/* ============================================================
+   NEXA UTILITY — EMBEDDED TUBE CLOCK
+   Makes the original tube clock visually merge with the hero.
+   ============================================================ */
+
+html,
+body {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  overflow: hidden !important;
+
+  background: transparent !important;
+  background-color: transparent !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/*
+ * Remove the original page-like appearance.
+ * The tube itself remains untouched.
+ */
+body {
+  min-width: 0 !important;
+  min-height: 0 !important;
+}
+
+/*
+ * Let the actual tube occupy the entire embedded area.
+ */
+.clock {
+  width: 100% !important;
+  height: 100% !important;
+
+  background: transparent !important;
+
+  margin: 0 !important;
+}
+
+/*
+ * The original shadow can extend outside the tube.
+ * Keep it subtle so it blends into the Nexa hero.
+ */
+.clock .shadow {
+  opacity: 0.72;
+}
+
+/*
+ * Keep the power button from making the clock look like
+ * an independent demo page.
+ */
+.clock .button {
+  opacity: 0.18;
+  transition: opacity 0.25s ease;
+}
+
+.clock:hover .button {
+  opacity: 0.45;
+}
+
+/*
+ * The original clock starts with .off.
+ * Nexa keeps the clock permanently ON.
+ */
+.clock.off {
+  opacity: 1 !important;
+}
+
+.clock.off .shadow {
+  opacity: 0.72 !important;
+}
